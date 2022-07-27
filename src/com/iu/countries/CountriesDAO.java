@@ -3,12 +3,14 @@ package com.iu.countries;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.iu.util.DBConnector;
 
 public class CountriesDAO {
 
-	public void getDatail(String country_id) throws Exception {
+	public CountriesDTO getDatail(String country_id) throws Exception {
+		CountriesDTO countriesDTO = null;
 		Connection con = DBConnector.getConnection();
 		
 		String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_ID = ?";
@@ -19,20 +21,20 @@ public class CountriesDAO {
 		
 		ResultSet rs = st.executeQuery();
 		if(rs.next()) {
-			String counId = rs.getNString("country_id");
-			String counName = rs.getString("country_name");
-			int regId = rs.getInt("region_id");
-			System.out.println(counId);
-			System.out.println(regId);
-			System.out.println(counName);
+			countriesDTO = new CountriesDTO();
+			countriesDTO.setCountry_id(rs.getString("country_id"));
+			countriesDTO.setCountry_name(rs.getString("country_name"));
+			countriesDTO.setRegion_id(rs.getInt("region_id"));
 		}
 		
 		//6. 자원 해제
 		DBConnector.disConnect(rs, st, con);
+		return countriesDTO;
 		
 	}
 	
-	public void getList() throws Exception {
+	public ArrayList<CountriesDTO> getList() throws Exception {
+		ArrayList<CountriesDTO> ar = new ArrayList<>();
 		//1. DB와 연결
 		Connection con = DBConnector.getConnection();
 		//2. sql 문 작성
@@ -43,16 +45,16 @@ public class CountriesDAO {
 		ResultSet rs = st.executeQuery();
 		
 		while(rs.next()) {
-			String countryId = rs.getString("Country_id");
-			String countryName = rs.getString("Country_name");
-			int regionId = rs.getInt("Region_id");
-			System.out.println(countryId);
-			System.out.println(countryName);
-			System.out.println(regionId);
+			CountriesDTO countriesDTO = new CountriesDTO();
+			countriesDTO.setCountry_id(rs.getString("country_id"));
+			countriesDTO.setCountry_name(rs.getString("country_name"));
+			countriesDTO.setRegion_id(rs.getInt("region_id"));
+			ar.add(countriesDTO);
 		}
 		
 		//6. 자원해제
 		DBConnector.disConnect(rs, st, con);
+		return ar;
 		
 	}
 	

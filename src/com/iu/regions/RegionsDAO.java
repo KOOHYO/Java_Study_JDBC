@@ -11,7 +11,7 @@ public class RegionsDAO {
 	
 	//2. Regions에서 하나의 결과(row)
 	public RegionsDTO getDatail(int region_id) throws Exception{
-		RegionsDTO regionsDTO = new RegionsDTO();
+		RegionsDTO regionsDTO = null;
 		//1. DB 연결
 		Connection con = DBConnector.getConnection();
 		

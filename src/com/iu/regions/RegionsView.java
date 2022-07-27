@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class RegionsView {
 
-	public void view(ArrayList<RegionsDTO> ar) {
-		for(RegionsDTO regionsDTO : ar) {
-			System.out.println(regionsDTO.getRegion_id()+"\t\t");
-			System.out.println(regionsDTO.getRegion_name()+"\t\t");
+	public void view(ArrayList<RegionsDTO> ar2) {
+		System.out.println("Region_ID\tRegion_Name");
+		System.out.println("------------------------------------");
+		for(RegionsDTO regionsDTO : ar2) {
+			System.out.print(regionsDTO.getRegion_id()+"\t\t");
+			System.out.println(regionsDTO.getRegion_name()+"\t");
 		}
 		
 	}

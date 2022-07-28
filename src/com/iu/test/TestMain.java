@@ -33,6 +33,28 @@ public class TestMain {
 		EmployeesView employeesView = new EmployeesView();
 		
 		try {
+			countriesDTO.setCountry_id("KN");
+			countriesDTO.setCountry_name("Nolth Korea");
+			countriesDTO.setRegion_id(3);
+			int result = countriesDAO.setCountry(countriesDTO);
+			if(result > 0) {
+				System.out.println("성공!");
+			}else {
+				System.out.println("실패!");//추가 성공!
+			}
+			
+//			regionsDTO.setRegions_name("Nolth America");
+//			regionsDTO.setRegions_id(6);
+//			int result = regionsDAO.setRegion(regionsDTO);//여기서 DB를 가면 추가가 되어있다!
+//			
+//			if(result > 0) {
+//				System.out.println("성공");
+//			}else {
+//				System.out.println("실패");
+//			}
+			
+//			employeesDAO.getSalaryInfo();
+			
 //			employeesDTO = employeesDAO.getDatail(100);
 //			employeesView.view(employeesDTO);
 			
@@ -45,7 +67,7 @@ public class TestMain {
 			//countriesDTO= countriesDAO.getDatail("AR");
 			//countriesView.view(countriesDTO);
 			
-			//ar =regionsDAO.getList();
+			//ar = regionsDAO.getList();
 			//regionsView.view(ar);
 			
 			//regionsDTO = regionsDAO.getDatail(2);

@@ -8,8 +8,8 @@ public class RegionsView {
 		System.out.println("Region_ID\tRegion_Name");
 		System.out.println("------------------------------------");
 		for(RegionsDTO regionsDTO : ar2) {
-			System.out.print(regionsDTO.getRegion_id()+"\t\t");
-			System.out.println(regionsDTO.getRegion_name()+"\t");
+			System.out.print(regionsDTO.getRegions_id()+"\t\t");
+			System.out.println(regionsDTO.getRegions_name()+"\t");
 		}
 		
 	}
@@ -18,8 +18,8 @@ public class RegionsView {
 		
 		System.out.println("Region_ID\tRegion_Name");
 		System.out.println("------------------------------------");
-		System.out.print(regionsDTO.getRegion_id()+"\t\t");
-		System.out.println(regionsDTO.getRegion_name()+"\t");
+		System.out.print(regionsDTO.getRegions_id()+"\t\t");
+		System.out.println(regionsDTO.getRegions_name()+"\t");
 		
 	}
 	

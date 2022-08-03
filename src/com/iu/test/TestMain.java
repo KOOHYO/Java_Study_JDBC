@@ -38,9 +38,9 @@ public class TestMain {
 			countriesDTO.setRegion_id(3);
 			int result = countriesDAO.setCountry(countriesDTO);
 			if(result > 0) {
-				System.out.println("성공!");
+				System.out.println("성공!");//추가 성공!
 			}else {
-				System.out.println("실패!");//추가 성공!
+				System.out.println("실패!");
 			}
 			
 //			regionsDTO.setRegions_name("Nolth America");

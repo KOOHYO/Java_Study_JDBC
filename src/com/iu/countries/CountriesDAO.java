@@ -65,9 +65,9 @@ public class CountriesDAO {
 		//1. DB와 연결
 		Connection con = DBConnector.getConnection();
 		//2. sql 문 작성
-		//String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_NAME LIKE '%'a'%'"; 오라클에서 이렇게쓰면 에러
+		//String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_NAME LIKE '%'a'%'"; 오라클에서 이렇게쓰면 에러 왜냐하면 a사이에 홑따운표가 앞뒤로 생기기때문!
 		String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_NAME LIKE ?";
-		//String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_NAME LIKE '%'||?||'%';
+		//String sql = "SELECT * FROM COUNTRIES WHERE COUNTRY_NAME LIKE '%'||?||'%'; 오라클에서는 문자열로 연결해주는 연산자 ||
 		
 		//3. sql 문 미리 전송
 		PreparedStatement st = con.prepareStatement(sql);
